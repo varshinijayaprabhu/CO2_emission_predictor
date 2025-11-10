@@ -24,7 +24,7 @@ This README analyzes the notebook `project-code.ipynb` in this repository and pr
 3. Basic EDA: .shape, .info(), .describe(), missing value checks.
 4. Copy dataset and fill missing values (`Engine-Size` filled with mean, `Cylinders` filled with median).
 
-# Predicting CO2 Emissions — Developer README
+# Predicting CO2 Emissions overview
 
 This repository contains a Jupyter notebook, `project-code.ipynb`, that demonstrates building machine-learning models to estimate vehicle CO2 emissions from fuel consumption and vehicle specifications.
 
