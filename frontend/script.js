@@ -17,7 +17,7 @@ document
       // Automatic URL switching: Local for testing, Render for production
       const API_URL = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost"
         ? "http://127.0.0.1:5000/predict"
-        : "https://your-backend-name.onrender.com/predict"; // UPDATE THIS after Render deployment
+        : "https://co2-emission-predictor-d27d.onrender.com/predict";
 
       const response = await fetch(API_URL, {
         method: "POST",
