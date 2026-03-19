@@ -24,15 +24,13 @@ def predict():
     try:
         data = request.get_json()
         
-        # Features must be in the same order as trained in the notebook:
-        # 1. Engine Size, 2. Cylinders, 3. City Fuel, 4. Hwy Fuel, 5. Comb Fuel, 6. Comb MPG
+        # Features specified by user: 
+        # 1. Comb Fuel, 2. City Fuel, 3. Hwy Fuel, 4. Engine Size
         features = [
-            float(data['engine_size']),
-            float(data['cylinders']),
+            float(data['fuel_comb']),
             float(data['fuel_city']),
             float(data['fuel_hwy']),
-            float(data['fuel_comb']),
-            float(data['fuel_mpg'])
+            float(data['engine_size'])
         ]
         
         prediction = model.predict(np.array([features]))

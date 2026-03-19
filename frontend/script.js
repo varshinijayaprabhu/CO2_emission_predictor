@@ -2,12 +2,10 @@ document
   .getElementById("predict-form")
   .addEventListener("submit", async function (e) {
     e.preventDefault();
-    const engine_size = parseFloat(document.getElementById("engine_size").value);
-    const cylinders = parseFloat(document.getElementById("cylinders").value);
+    const fuel_comb = parseFloat(document.getElementById("fuel_comb").value);
     const fuel_city = parseFloat(document.getElementById("fuel_city").value);
     const fuel_hwy = parseFloat(document.getElementById("fuel_hwy").value);
-    const fuel_comb = parseFloat(document.getElementById("fuel_comb").value);
-    const fuel_mpg = parseFloat(document.getElementById("fuel_mpg").value);
+    const engine_size = parseFloat(document.getElementById("engine_size").value);
 
     // Add loading state to button
     const btn = e.target.querySelector("button");
@@ -20,12 +18,10 @@ document
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
-          engine_size, 
-          cylinders, 
+          fuel_comb, 
           fuel_city, 
           fuel_hwy, 
-          fuel_comb, 
-          fuel_mpg 
+          engine_size 
         }),
       });
       const data = await response.json();
@@ -45,7 +41,7 @@ document
       }
 
       drawGauge(data.prediction);
-      drawPie([engine_size, cylinders, fuel_city, fuel_hwy, fuel_comb, fuel_mpg]);
+      drawPie([fuel_comb, fuel_city, fuel_hwy, engine_size]);
     } catch (error) {
       console.error("Prediction failed:", error);
       document.getElementById("result").textContent =
@@ -117,10 +113,8 @@ function drawPie(values) {
     "#9b5de5", // Purple
     "#f15bb5", // Magenta
     "#fee440", // Yellow
-    "#00bbf9", // Ocean Blue
-    "#00f5d4", // Mint Green
   ];
-  const labels = ["Eng", "Cyl", "City", "Hwy", "Comb", "MPG"];
+  const labels = ["Comb", "City", "Hwy", "Eng"];
 
   ctx.shadowBlur = 15;
 
