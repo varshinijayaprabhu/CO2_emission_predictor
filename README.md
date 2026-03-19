@@ -1,65 +1,68 @@
-# 🌸 Carbon Pulse | AI CO2 Emission Predictor
-
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+# 🌸 My First ML Journey: Predicting Carbon Pulses
+> *A deep dive into my individual internship project at **Prinston Smart Engineers**.*
 
 ---
 
-## 🎨 A Premium, High-Performance Dashboard
-**Carbon Pulse** is not just another emission calculator—it's a high-class, AI-driven experience. Built with a stunning **Cherry Blossom Theme**, this dashboard combines machine learning accuracy with state-of-the-art UI/UX design.
+## 🚀 The Spark
+Every journey has a beginning. For me, it started with a question: **Can we predict the environmental footprint of a vehicle before it even hits the road?** 
 
-### ✨ Key Features
-- **🌸 Cherry Blossom Aesthetic**: A beautiful, vibrant pink and purple design inspired by cherry blossoms.
-- **✨ Glassmorphism UI**: High-definition blurry glass effects for a modern, premium feel.
-- **🚀 AI Predictions**: Real-time CO2 emission predictions powered by a Flask-based backend.
-- **📊 Interactive Visualizations**: Dynamic Gauge and Pie charts that respond instantly to your data.
-- **📱 Zero-Scroll UX**: A perfectly optimized layout that fits all features onto a single screen.
-- **🔗 Developer Branding**: Integrated social links for quick networking.
+As my very first Machine Learning project during my internship at **Prinston Smart Engineers**, this was more than just an assignment—it was a quest to understand how data can drive sustainability. 
 
 ---
 
-## 🛠️ Tech Stack
-| Layer | Technologies |
-| :--- | :--- |
-| **Frontend** | HTML5, CSS3 (Vanilla), JavaScript (ES6+) |
-| **Backend** | Python, Flask, REST API |
-| **Styling** | Custom Glassmorphism, Font Awesome |
-| **Icons** | Font Awesome 6.0 |
+## 📝 The Problem Statement
+In the fight against climate change, monitoring CO2 emissions is critical. However, physical testing for every vehicle model is expensive and time-consuming. 
+
+**The Goal:** Develop an intelligent system that uses a vehicle's mechanical DNA—like engine size, cylinder count, and fuel efficiency—to accurately forecast its CO2 emissions. 
 
 ---
 
-## 🚀 Quick Start
-To run this project locally, follow these simple steps:
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/varshinijayaprabhu/CO2_emission_predictor.git
-   cd CO2_emission_predictor
-   ```
-
-2. **Start the Backend**
-   ```bash
-   cd backend
-   python app.py
-   ```
-
-3. **Launch the Frontend**
-   Simply open `frontend/index.html` in your favorite browser.
+## 📊 The Map (The Dataset)
+I utilized the **2019 Fuel Consumption Dataset** for new light-duty vehicles in Canada. This rich dataset provided the perfect training ground, containing:
+- **Engine Size (L)**: The heart of the power.
+- **Cylinders**: The rhythm of the engine.
+- **Fuel Consumption (City/Hwy/Comb)**: How the vehicle "breathes" fuel.
+- **CO2 Emissions (g/km)**: Our target variable.
 
 ---
 
-## 👩‍💻 Designed & Developed by
+## 🛠️ The Arsenal: Exploring the Models
+I didn't just settle for one model. I experimented with three distinct algorithms to see which one could capture the complex relationships in the data:
+
+### 1. Linear Regression (The Foundation)
+- **R2-Score: 0.84**
+- *The Logic:* A classic approach that looks for a straight-line relationship. While reliable, it couldn't quite capture the nuances of higher-performance engines.
+
+### 2. K-Nearest Neighbors (The Reliable Neighbor)
+- **R2-Score: 0.91**
+- *The Logic:* This model makes predictions based on how "similar" vehicles performed. It was much sharper than linear regression but still had room for improvement.
+
+### 3. Decision Tree Regressor (The Champion) 🏆
+- **R2-Score: 0.98**
+- *The Logic:* By branching out through the data features, the Decision Tree was able to perfectly map the intricate patterns of fuel consumption and engine mechanics. It emerged as the clear winner.
+
+---
+
+## 🏆 The Results & Conclusion
+| Model | R2-Score | Performance |
+| :--- | :--- | :--- |
+| **Decision Tree** | **0.98** | **Exceptional** |
+| **KNN** | 0.91 | Very Good |
+| **Linear Regression** | 0.84 | Good |
+
+**The Verdict:** The Decision Tree Regressor's high accuracy (98%) proved that machine learning can be a powerful tool for environmental monitoring. 
+
+This project taught me that data isn't just numbers—it's a story. Working individually under the guidance of **Prinston Smart Engineers**, I learned how to preprocess raw data, handle missing values, and tune models to perfection.
+
+---
+
+## 👩‍💻 About the Developer
 **Varshini J**
-
-Connect with me and see more of my work:
+This project marks the start of my path in AI. Feel free to reach out or explore my other work!
 
 [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/varshinijayaprabhu)
 [<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">](https://www.linkedin.com/in/varshinij2004/)
 [<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white">](mailto:varshini.j.512004@gmail.com)
 
 ---
-
-> "Advancing sustainability through elegant code." 🍃
+*Designed with 🌸 and ☕ during my first ML internship.*
