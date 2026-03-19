@@ -5,15 +5,9 @@
 
 ## 📺 Project Demonstration
 <div align="center">
-  <video src="https://github.com/varshinijayaprabhu/CO2_emission_predictor/raw/main/media/demo.mp4" width="100%" controls>
+  <video src="https://github.com/user-attachments/assets/53c99275-25bd-420a-bda3-ab48cf166054" width="100%" controls>
     Your browser does not support the video tag.
   </video>
-</div>
-
-<div align="center">
-  <a href="https://github.com/varshinijayaprabhu/CO2_emission_predictor/blob/main/media/demo.mp4">
-    <i>If the video does not load, click here to watch the demonstration.</i>
-  </a>
 </div>
 
 ## Project Overview
