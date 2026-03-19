@@ -3,6 +3,13 @@
 
 ---
 
+## 📺 Project Demonstration
+<div align="center">
+  <video src="media/demo.mp4" width="100%" controls muted autoplay loop poster="https://img.shields.io/badge/Demo-Video-FF007F?style=for-the-badge&logoColor=white">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 ## Project Overview
 This project focuses on the development of a predictive system to estimate CO2 emissions from light-duty vehicles. By leveraging historical fuel consumption and vehicle specification data, we implement regression-based machine learning models to provide accurate, data-driven environmental assessments.
 
@@ -93,3 +100,6 @@ While both Random Forest and XGBoost achieved an R2 score of 0.97, the **XGBoost
 [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/varshinijayaprabhu)
 [<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">](https://www.linkedin.com/in/varshinij2004/)
 [<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white">](mailto:varshini.j.512004@gmail.com)
+
+### 📜 Certification
+![Internship Certificate](media/certificate.jpg)
