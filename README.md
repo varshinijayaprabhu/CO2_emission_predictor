@@ -27,32 +27,38 @@ I utilized the **2019 Fuel Consumption Dataset** for new light-duty vehicles in 
 ---
 
 ## 🛠️ The Arsenal: Exploring the Models
-I didn't just settle for one model. I experimented with three distinct algorithms to see which one could capture the complex relationships in the data:
+### 🤖 Models Used & Performance Analysis
 
-### 1. Linear Regression (The Foundation)
-- **R2-Score: 0.84**
-- *The Logic:* A classic approach that looks for a straight-line relationship. While reliable, it couldn't quite capture the nuances of higher-performance engines.
+To find the most accurate predictor, I experimented with multiple machine learning algorithms. After rigorous training and evaluation on the 2019 dataset, here is how they performed:
 
-### 2. K-Nearest Neighbors (The Reliable Neighbor)
-- **R2-Score: 0.91**
-- *The Logic:* This model makes predictions based on how "similar" vehicles performed. It was much sharper than linear regression but still had room for improvement.
+1.  **Random Forest Regressor** (R2 Score: **0.97**)
+    *   **Approach**: An ensemble learning method that builds multiple decision trees and merges them together.
+    *   **Result**: Exceptional accuracy by capturing complex interactions between fuel consumption and engine size.
 
-### 3. Decision Tree Regressor (The Champion) 🏆
-- **R2-Score: 0.98**
-- *The Logic:* By branching out through the data features, the Decision Tree was able to perfectly map the intricate patterns of fuel consumption and engine mechanics. It emerged as the clear winner.
+2.  **XGBoost Regressor** (R2 Score: **0.97**)
+    *   **Approach**: Optimized gradient boosting designed for speed and performance.
+    *   **Result**: Highly competitive results, matching Random Forest in R2 score and providing a slightly lower Mean Absolute Error (MAE: 3.43).
+
+3.  **Linear Regression** (R2 Score: **0.84**)
+    *   **Approach**: The baseline statistical model for relationship prediction.
+    *   **Result**: Provided a solid foundation but struggled with the non-linear aspects of the dataset compared to ensemble methods.
+
+### 🏆 The Best Result
+
+After careful analysis, the **Random Forest Regressor** was selected as the primary model for this project. With an **R2 Score of 0.97**, it offers a near-perfect balance of precision and reliability. The model is so robust that it can predict CO2 emissions with an average error of only ~3.6 g/km!
 
 ---
 
-## 🏆 The Results & Conclusion
-| Model | R2-Score | Performance |
+## 🏆 The Results & Summary
+| Model | R2-Score | Error (MAE) |
 | :--- | :--- | :--- |
-| **Decision Tree** | **0.98** | **Exceptional** |
-| **KNN** | 0.91 | Very Good |
-| **Linear Regression** | 0.84 | Good |
+| **Random Forest** | **0.97** | **3.61** |
+| **XGBoost** | **0.97** | **3.43** |
+| **Linear Regression** | 0.84 | ~10.2 |
 
-**The Verdict:** The Decision Tree Regressor's high accuracy (98%) proved that machine learning can be a powerful tool for environmental monitoring. 
+**The Verdict:** The high accuracy (97%) achieved by ensemble methods proved that machine learning can be a powerful tool for environmental monitoring. 
 
-This project taught me that data isn't just numbers—it's a story. Working individually under the guidance of **Prinston Smart Engineers**, I learned how to preprocess raw data, handle missing values, and tune models to perfection.
+This project taught me that data isn't just numbers—it's a story. Working individually under the guidance of **Prinston Smart Engineers**, I learned how to preprocess raw data, handle missing values, and deploy the most effective model for real-world impact.
 
 ---
 
