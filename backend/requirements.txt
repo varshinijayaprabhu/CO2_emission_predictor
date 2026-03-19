@@ -4,3 +4,4 @@ xgboost
 numpy
 pandas
 openpyxl
+gunicorn

@@ -14,7 +14,12 @@ document
     btn.disabled = true;
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/predict", {
+      // Automatic URL switching: Local for testing, Render for production
+      const API_URL = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost"
+        ? "http://127.0.0.1:5000/predict"
+        : "https://your-backend-name.onrender.com/predict"; // UPDATE THIS after Render deployment
+
+      const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
