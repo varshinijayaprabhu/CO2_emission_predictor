@@ -1,78 +1,95 @@
-# 🌸 My First ML Journey: Predicting Carbon Pulses
-> *A deep dive into my individual internship project at **Prinston Smart Engineers**.*
+# Vehicle CO2 Emissions Prediction
+> A technical analysis and implementation of machine learning models for environmental impact forecasting. Developed during a professional internship at Prinston Smart Engineers.
 
 ---
 
-## 🚀 The Spark
-Every journey has a beginning. For me, it started with a question: **Can we predict the environmental footprint of a vehicle before it even hits the road?** 
+## Project Overview
+This project focuses on the development of a predictive system to estimate CO2 emissions from light-duty vehicles. By leveraging historical fuel consumption and vehicle specification data, we implement regression-based machine learning models to provide accurate, data-driven environmental assessments.
 
-As my very first Machine Learning project during my internship at **Prinston Smart Engineers**, this was more than just an assignment—it was a quest to understand how data can drive sustainability. 
-
----
-
-## 📝 The Problem Statement
-In the fight against climate change, monitoring CO2 emissions is critical. However, physical testing for every vehicle model is expensive and time-consuming. 
-
-**The Goal:** Develop an intelligent system that uses a vehicle's mechanical DNA—like engine size, cylinder count, and fuel efficiency—to accurately forecast its CO2 emissions. 
+This was an individual project conducted under the guidance of **Prinston Smart Engineers**.
 
 ---
 
-## 📊 The Map (The Dataset)
-I utilized the **2019 Fuel Consumption Dataset** for new light-duty vehicles in Canada. This rich dataset provided the perfect training ground, containing:
-- **Engine Size (L)**: The heart of the power.
-- **Cylinders**: The rhythm of the engine.
-- **Fuel Consumption (City/Hwy/Comb)**: How the vehicle "breathes" fuel.
-- **CO2 Emissions (g/km)**: Our target variable.
+## Problem Statement
+Accurately measuring vehicle emissions through physical testing is resource-intensive. The objective of this project is to build a computational model that predicts CO2 emissions (g/km) using accessible vehicle specifications such as engine displacement and fuel efficiency metrics.
 
 ---
 
-## 🛠️ The Arsenal: Exploring the Models
-### 🤖 Models Used & Performance Analysis
-
-To find the most accurate predictor, I experimented with multiple machine learning algorithms. After rigorous training and evaluation on the 2019 dataset, here is how they performed:
-
-1.  **Random Forest Regressor** (R2 Score: **0.97**)
-    *   **Approach**: An ensemble learning method that builds multiple decision trees and merges them together.
-    *   **Result**: Exceptional accuracy by capturing complex interactions between fuel consumption and engine size.
-
-2.  **XGBoost Regressor** (R2 Score: **0.97**)
-    *   **Approach**: Optimized gradient boosting designed for speed and performance.
-    *   **Result**: Highly competitive results, matching Random Forest in R2 score and providing a slightly lower Mean Absolute Error (MAE: 3.43).
-
-3.  **Linear Regression** (R2 Score: **0.84**)
-    *   **Approach**: The baseline statistical model for relationship prediction.
-    *   **Result**: Provided a solid foundation but struggled with the non-linear aspects of the dataset compared to ensemble methods.
-
-### 🏆 The Precision Winner: XGBoost
-
-After re-evaluating both R2 Score and Mean Absolute Error (MAE), we found that the **XGBoost Regressor** is the ultimate choice for real-world predictions. 
-
-- **Why?** While Random Forest had a fractionally higher R2 score, XGBoost achieved a significantly lower **Mean Absolute Error (MAE: 3.43)**. This means its predictions are, on average, more precise and closer to the actual emission values. It provides the highest accuracy while maintaining excellent computational efficiency.
-
-The model can predict a vehicle's CO2 pulse with an average variance of only **3.4 g/km**!
+## Dataset Analysis
+The model is trained on the **2019 Fuel Consumption Dataset** for light-duty vehicles. The following features were identified as core predictors:
+- **Engine Size (L)**: Total volume of all cylinders in the engine.
+- **Fuel Consumption (City/Hwy/Comb)**: Liters of fuel consumed per 100 km under various driving conditions.
+- **CO2 Emissions (g/km)**: The target variable for supervised learning.
 
 ---
 
-## 🏆 The Results & Summary
+## Technical Stack & Tools
+The following technologies were utilized to build the end-to-end pipeline:
+
+### 1. Data Analysis & Modeling
+- **Python**: The primary programming language used for the entire machine learning pipeline.
+- **Pandas & NumPy**: Utilized for data cleaning, handling missing values in engine specifications, and performing numerical transformations.
+- **Scikit-learn**: Used to implement Linear Regression and Random Forest Regressor models, providing a robust framework for evaluation metrics.
+- **XGBoost**: Employed to achieve high-precision regression results through optimized gradient boosting.
+
+### 2. Backend & API
+- **Flask**: A lightweight WSGI web application framework used to deploy the trained model as a RESTful API.
+- **Pickle**: Used for serializing and de-serializing the trained XGBoost model to ensure efficient reloading during inference.
+
+### 3. Frontend Dashboard
+- **HTML5 & Vanilla CSS**: Used to design a responsive, high-fidelity user interface.
+- **JavaScript (ES6)**: Handles asynchronous API calls to the Flask backend and manages real-time data visualization via the Canvas API.
+
+---
+
+## Model Evaluation and Results
+Multiple algorithms were evaluated to determine the most effective predictor. Scores are based on the R2 metric and Mean Absolute Error (MAE).
+
 | Model | R2-Score | Error (MAE) |
 | :--- | :--- | :--- |
+| **XGBoost Regressor** | **0.97** | **3.43** |
 | **Random Forest** | **0.97** | **3.61** |
-| **XGBoost** | **0.97** | **3.43** |
 | **Linear Regression** | 0.84 | ~10.2 |
 
-**The Verdict:** The high accuracy (97%) achieved by ensemble methods proved that machine learning can be a powerful tool for environmental monitoring. 
-
-This project taught me that data isn't just numbers—it's a story. Working individually under the guidance of **Prinston Smart Engineers**, I learned how to preprocess raw data, handle missing values, and deploy the most effective model for real-world impact.
+### Performance Analysis
+While both Random Forest and XGBoost achieved an R2 score of 0.97, the **XGBoost Regressor** was selected as the production model due to its superior precision, evidenced by a significantly lower **Mean Absolute Error (3.43 g/km)**.
 
 ---
 
-## 👩‍💻 About the Developer
+## Execution Guide
+
+### Prerequisites
+- Python 3.8+
+- Required libraries: `pip install flask flask-cors xgboost pandas openpyxl`
+
+### Step 1: Model Generation
+1. Open `project-code.ipynb` in your preferred editor (Jupyter/VS Code).
+2. Execute all cells to perform data cleaning and model training.
+3. Ensure the final cell is executed to export the model:
+   ```python
+   import pickle
+   with open("backend/co2_model.pkl", "wb") as f:
+       pickle.dump(xgb_4, f)
+   ```
+
+### Step 2: Backend Deployment
+1. Navigate to the `backend/` directory.
+2. Start the Flask server:
+   ```bash
+   python app.py
+   ```
+3. The server will initialize at `http://127.0.0.1:5000`.
+
+### Step 3: Frontend Access
+1. Navigate to the `frontend/` directory.
+2. Open `index.html` in a web browser.
+3. Input the required vehicle specifications to receive real-time CO2 predictions.
+
+---
+
+## Developer
 **Varshini J**
-This project marks the start of my path in AI. Feel free to reach out or explore my other work!
 
 [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/varshinijayaprabhu)
 [<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">](https://www.linkedin.com/in/varshinij2004/)
 [<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white">](mailto:varshini.j.512004@gmail.com)
-
----
-*Designed with 🌸 and ☕ during my first ML internship.*
