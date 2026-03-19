@@ -3,6 +3,9 @@
 
 ---
 
+## 🔗 Live Deployment
+**Check out the live application here:** [Carbon Pulse | AI CO2 Predictor](https://carbon-pulse.onrender.com)
+
 ## 📺 Project Demonstration
 <div align="center">
   <video src="https://github.com/user-attachments/assets/53c99275-25bd-420a-bda3-ab48cf166054" width="100%" controls>
