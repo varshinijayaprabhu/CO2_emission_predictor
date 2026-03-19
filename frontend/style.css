@@ -94,26 +94,20 @@ h1 {
 #predict-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-.input-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 12px;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 }
 
 .input-group label {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: white;
-  margin-left: 2px;
+  margin-left: 4px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
