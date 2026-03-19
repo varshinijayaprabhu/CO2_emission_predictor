@@ -5,9 +5,15 @@
 
 ## 📺 Project Demonstration
 <div align="center">
-  <video src="media/demo.mp4" width="100%" controls muted autoplay loop poster="https://img.shields.io/badge/Demo-Video-FF007F?style=for-the-badge&logoColor=white">
+  <video src="https://github.com/varshinijayaprabhu/CO2_emission_predictor/raw/main/media/demo.mp4" width="100%" controls>
     Your browser does not support the video tag.
   </video>
+</div>
+
+<div align="center">
+  <a href="https://github.com/varshinijayaprabhu/CO2_emission_predictor/blob/main/media/demo.mp4">
+    <i>If the video does not load, click here to watch the demonstration.</i>
+  </a>
 </div>
 
 ## Project Overview
