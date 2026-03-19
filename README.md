@@ -43,9 +43,13 @@ To find the most accurate predictor, I experimented with multiple machine learni
     *   **Approach**: The baseline statistical model for relationship prediction.
     *   **Result**: Provided a solid foundation but struggled with the non-linear aspects of the dataset compared to ensemble methods.
 
-### 🏆 The Best Result
+### 🏆 The Precision Winner: XGBoost
 
-After careful analysis, the **Random Forest Regressor** was selected as the primary model for this project. With an **R2 Score of 0.97**, it offers a near-perfect balance of precision and reliability. The model is so robust that it can predict CO2 emissions with an average error of only ~3.6 g/km!
+After re-evaluating both R2 Score and Mean Absolute Error (MAE), we found that the **XGBoost Regressor** is the ultimate choice for real-world predictions. 
+
+- **Why?** While Random Forest had a fractionally higher R2 score, XGBoost achieved a significantly lower **Mean Absolute Error (MAE: 3.43)**. This means its predictions are, on average, more precise and closer to the actual emission values. It provides the highest accuracy while maintaining excellent computational efficiency.
+
+The model can predict a vehicle's CO2 pulse with an average variance of only **3.4 g/km**!
 
 ---
 

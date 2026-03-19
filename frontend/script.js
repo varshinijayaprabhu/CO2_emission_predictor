@@ -2,12 +2,12 @@ document
   .getElementById("predict-form")
   .addEventListener("submit", async function (e) {
     e.preventDefault();
-    const fuel_comb = parseFloat(document.getElementById("fuel_comb").value);
+    const engine_size = parseFloat(document.getElementById("engine_size").value);
+    const cylinders = parseFloat(document.getElementById("cylinders").value);
     const fuel_city = parseFloat(document.getElementById("fuel_city").value);
     const fuel_hwy = parseFloat(document.getElementById("fuel_hwy").value);
-    const engine_size = parseFloat(
-      document.getElementById("engine_size").value,
-    );
+    const fuel_comb = parseFloat(document.getElementById("fuel_comb").value);
+    const fuel_mpg = parseFloat(document.getElementById("fuel_mpg").value);
 
     // Add loading state to button
     const btn = e.target.querySelector("button");
@@ -19,7 +19,14 @@ document
       const response = await fetch("http://127.0.0.1:5000/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fuel_comb, fuel_city, fuel_hwy, engine_size }),
+        body: JSON.stringify({ 
+          engine_size, 
+          cylinders, 
+          fuel_city, 
+          fuel_hwy, 
+          fuel_comb, 
+          fuel_mpg 
+        }),
       });
       const data = await response.json();
 
@@ -38,7 +45,7 @@ document
       }
 
       drawGauge(data.prediction);
-      drawPie([fuel_comb, fuel_city, fuel_hwy, engine_size]);
+      drawPie([engine_size, cylinders, fuel_city, fuel_hwy, fuel_comb, fuel_mpg]);
     } catch (error) {
       console.error("Prediction failed:", error);
       document.getElementById("result").textContent =
@@ -110,8 +117,10 @@ function drawPie(values) {
     "#9b5de5", // Purple
     "#f15bb5", // Magenta
     "#fee440", // Yellow
+    "#00bbf9", // Ocean Blue
+    "#00f5d4", // Mint Green
   ];
-  const labels = ["Comb", "City", "Hwy", "Eng"];
+  const labels = ["Eng", "Cyl", "City", "Hwy", "Comb", "MPG"];
 
   ctx.shadowBlur = 15;
 
